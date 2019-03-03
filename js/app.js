@@ -10,13 +10,15 @@ class Enemy {
         this.x = x;
         this.y = y;
         this.sprite = 'images/enemy-bug.png';
-        this.speed = 1 + (Math.random()*3);
+        this.speed = 1 + (Math.random()*2);
+        this.height = 76;
+        this.width = 101;
     }
 
     update(dt) {
         if (this.x > 505){
             this.x = -100;
-            this.speed = 1 + (Math.random()*(3));
+            this.speed = 1 + (Math.random()*(2));
         } else {
             this.x = this.x + 100*dt*this.speed;
         };
@@ -33,10 +35,12 @@ class Player {
         this.x = x;
         this.y = y;
         this.sprite = sprite;
+        this.height = 97;
+        this.width = 75;
     }
 
     update() {
-
+        endGame();
     }
 
     render() {
@@ -83,10 +87,12 @@ function winGame (){
     };
 };
 
-// function endGame (){
-//     if () {
-//         player.x = 202;
-//         player.y = 403;
-//         endGameNum+=1;
-//     };
-// };
+function endGame (){
+    allEnemies.forEach(function(enemy){
+        if  ((Math.abs(player.y - enemy.y) < enemy.height)&&(Math.abs(player.x - enemy.x) < player.width)) {
+            player.x = 202;
+            player.y = 403;
+            endGameNum+=1;
+        };
+    })       
+};  
