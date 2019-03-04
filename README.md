@@ -1,20 +1,26 @@
-# Classic Arcade Game Clone Project
+# Classic Arcade Game 
 
 ## Table of Contents
 
-- [Instructions](#instructions)
-- [Contributing](#contributing)
+- [How To Run Arcade Game](#Run)
+- [How To Play Arcade Game](#Play)
 
-## Instructions
+## Run
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+##### 1. Download or clone the GitHub repository
+#
+```
+git clone https://github.com/kokole110/Arcade-game
+```
+##### 2. Extract the .zip file
+##### 3. Open index.html in your browser.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+## Play 
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
+##### 1. In this game you have a Player and Enemies (Bugs).
+##### 2. The goal of the player is to reach the water, without colliding into any one of the enemies. 
+##### 3. The player can move left, right, up and down. 
+##### 4. The enemies move in varying speeds on the paved block portion of the scene. 
+##### 5. Once a the player collides with an enemy, the game is reset and the player moves back to the start square. 
+##### 6. Once the player reaches the water the game is won.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.

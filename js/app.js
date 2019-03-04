@@ -47,6 +47,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
+    // this function moves the player in different directions according to keys pressed
     handleInput(direction) {
         if ((direction === 'left') && (this.x-101>=0)){
             this.x -= 101; 
@@ -61,11 +62,13 @@ class Player {
     };  
 };
 
+// create new player and enemy objects;
 const player = new Player(202, 403, 'images/char-boy.png');
 const enemy1 = new Enemy (-100, 62);
 const enemy2 = new Enemy (-300, 147);
 const enemy3 = new Enemy (-500, 230);
 
+// put all enemy objects in an array; 
 let allEnemies = [enemy1, enemy2, enemy3];
 
 document.addEventListener('keyup', function(e) {
@@ -79,6 +82,9 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+// this function checks if the player reaches the water; 
+// if true, it moves the player to starting position and alerts
+// the number of successful attemps;  
 function winGame (){
     if (player.y<0) {
 
@@ -94,6 +100,8 @@ function winGame (){
     };
 };
 
+// this function checks for collision with any bug;
+// if true, returns the player to starting position;
 function endGame (){
     allEnemies.forEach(function(enemy){
         if  ((Math.abs(player.y - enemy.y) < enemy.height)&&(Math.abs(player.x - enemy.x) < player.width)) {
