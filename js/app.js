@@ -81,9 +81,16 @@ document.addEventListener('keyup', function(e) {
 
 function winGame (){
     if (player.y<0) {
+
         player.x = 202;
         player.y = 403;
         winGameNum+=1;
+        if (winGameNum!=1){
+            alert(`Player reaches the water ${winGameNum} times`);    
+        } else {
+            alert(`Player reaches the water ${winGameNum} time`);
+        }
+        
     };
 };
 
@@ -96,3 +103,4 @@ function endGame (){
         };
     })       
 };  
+
